@@ -5,17 +5,18 @@
 }
 
 body{
-    background-color: rgb(151, 0, 0);
+    background-color: rgb(30, 17, 66);
    font-family:Verdana, Geneva, Tahoma, sans-serif;
    max-width:2000px;
    margin: 0 auto; 
+   overflow: hidden;
 }
 p {
     text-transform: uppercase;
     font-size: 200px;
     width:100%;
     text-align: center;
-    color: white;
+    color: rgb(242, 255, 167);
     font-weight: 700;
     
     
@@ -48,26 +49,24 @@ h1 {
     font-size:100px;
     position: absolute; 
     bottom: 30px;
-    animation: constant 5s linear 0s infinite;
+    animation: constant 5s linear 1.4s infinite;
     display:inline-block;
+    transform: translateX(-5000px);
 
     white-space: nowrap;
     text-overflow: ellipsis; 
 }
 
 .always{
-    animation: constant 4s linear 0s infinite;
+
+    animation: constant 5s linear 0s infinite;
 }
 
-.inital{
-    animation: keeplooping 4s linear 4s infinite;
-    
-}
 
 @keyframes constant {
     0% {
         
-        transform: translateX(-5000px);
+        transform: translateX(-4900px);
     }
     100% {
         transform: translateX(2000px);
@@ -75,14 +74,5 @@ h1 {
 
 }
 
-@keyframes keeplooping {
-    
-    0% {
-        
-        transform: translateX(-5000px);
-    }
-    100% {
-        transform: translateX(2000px);
-    }
-}
+
 
