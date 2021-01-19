@@ -185,6 +185,12 @@ screen and (max-height: 900px) {
     left:65%;
     top:50%;
   }
-.svgs {
-  transform: scale(1.4) translateY(10%);}
+  .svgs {
+  transform: scale(1.6) translateY(25%);}
+}
+@media screen and (max-width:405px ){
+  .lyrics{
+    font-size:13px;}
+    .svgs {
+      transform: scale(2) translateY(35%);}
 }
