@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #FFDFA1;
+}
+
+h1{
+position: absolute;
+left: 55%;
+font-family: 'Nunito', sans-serif;
+top:3%;
+font-size: 96px;
+color: #FF9E44;
+text-shadow: 1px 1px rgb(243, 255, 131), -2px -2px rgb(214, 66, 21);
+
+
+}
+
+
+.textBox{
+    position: absolute;
+    width: 469.32px;
+    height: 118.83px;
+    left: 187px;
+    top: 4%;
+
+}
+.slider{
+    position: absolute;
+    left:80%;
+    top: 4%;
+    
+}
+
+#bread1{
+    position: absolute;
+    width: 175px;
+    height: 174px;
+    left: 2%;
+    top: 110px;
+    cursor: pointer;
+}
+#bread2{
+    position: absolute;
+    width: 175px;
+    height: 174px;
+    left: 2%;
+    top: 110px;
+    cursor: pointer;
+    display:none;
+    animation: breadIcon 0.5s linear 0s 1;
+    animation-play-state:paused;
+}
+
+.buttons{
+font-family: pixelated;
+font-size: 18px;
+color: #FF9E44;
+text-shadow: 0px 4px 4px rgba(233, 73, 73, 0.25);
+cursor: pointer;
+}
+
+#homeButton{
+    width: 57px;
+    position: absolute;
+    left: 223px;
+    top: 7%;
+    z-index: 1;
+}
+
+#aboutButton{ 
+    width: 63px;
+    position: absolute;
+    left: 320px;
+    top: 7%;
+    z-index: 1;
+    
+}
+#workButton{ 
+    width: 57px;
+    position: absolute;
+    left: 430px;
+    top: 7%;
+    z-index: 1;
+}
+#contactButton{ 
+    width: 90px;
+    position: absolute;
+    left: 527px;
+    top: 7%;
+    z-index: 1;
+}
+
+@keyframes breadIcon {
+    50%{
+        
+        transform: scale(1.2);
+        transform: translateY(-10px);
+    }
+}
+
+
+
+
+
+/* fonts */
+@font-face {
+    font-family: pixelated;
+    src: url(fonts/pixelated.ttf);
+  }
+  
+ 
