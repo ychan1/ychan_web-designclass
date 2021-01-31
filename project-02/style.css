@@ -6,6 +6,7 @@
 
 body{
     background-color: #FFDFA1;
+    overflow: hidden;
 }
 
 h1{
@@ -23,17 +24,11 @@ text-shadow: 1px 1px rgb(243, 255, 131), -2px -2px rgb(214, 66, 21);
 
 .textBox{
     position: absolute;
-    width: 469.32px;
+    width: 490px;
     height: 118.83px;
-    left: 187px;
+    left: 15%;
     top: 4%;
 
-}
-.slider{
-    position: absolute;
-    left:80%;
-    top: 4%;
-    
 }
 
 #bread1{
@@ -41,15 +36,17 @@ text-shadow: 1px 1px rgb(243, 255, 131), -2px -2px rgb(214, 66, 21);
     width: 175px;
     height: 174px;
     left: 2%;
-    top: 110px;
+    top: 5%;
     cursor: pointer;
+    animation: breadIcon 0.5s linear 0s 1;
+    animation-play-state:paused;
 }
 #bread2{
     position: absolute;
     width: 175px;
     height: 174px;
     left: 2%;
-    top: 110px;
+    top: 5%;
     cursor: pointer;
     display:none;
     animation: breadIcon 0.5s linear 0s 1;
@@ -62,12 +59,13 @@ font-size: 18px;
 color: #FF9E44;
 text-shadow: 0px 4px 4px rgba(233, 73, 73, 0.25);
 cursor: pointer;
+display:none;
 }
 
 #homeButton{
     width: 57px;
     position: absolute;
-    left: 223px;
+    left: 17%;
     top: 7%;
     z-index: 1;
 }
@@ -75,7 +73,7 @@ cursor: pointer;
 #aboutButton{ 
     width: 63px;
     position: absolute;
-    left: 320px;
+    left: 22.5%;
     top: 7%;
     z-index: 1;
     
@@ -83,14 +81,14 @@ cursor: pointer;
 #workButton{ 
     width: 57px;
     position: absolute;
-    left: 430px;
+    left: 28.5%;
     top: 7%;
     z-index: 1;
 }
 #contactButton{ 
     width: 90px;
     position: absolute;
-    left: 527px;
+    left:34%;
     top: 7%;
     z-index: 1;
 }
@@ -107,6 +105,7 @@ cursor: pointer;
 
 
 
+
 /* fonts */
 @font-face {
     font-family: pixelated;
@@ -114,3 +113,113 @@ cursor: pointer;
   }
   
  
+
+/* slider button  */
+  .switch {
+    position: absolute;
+    display: inline-block;
+    width: 160px;
+    height: 80px;
+    left:80%;
+    top:5%;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ff9933;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 65px;
+    width: 65px;
+    left: 8px;
+    bottom: 8px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #3d2002;
+  }
+  
+  
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(75px);
+    -ms-transform: translateX(75px);
+    transform: translateX(75px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 40px;
+    
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  /* dark mode */
+.darkMode{
+    transition:background-color 0.3s ease-in-out;
+    background-color: #63370b;
+}
+
+
+
+/* bread animated section */
+#breadHouse {
+  cursor: pointer;
+  position: absolute;
+  width: 657px;
+  height: 694px;
+  left: 8%;
+  top: 25%;
+  z-index: 0;
+  /* animation: breadIcon 200ms linear 0s 1;
+  animation-play-state:paused; */
+}
+.breadhouseButton{
+  animation: breadIcon 150ms linear 0s 1 running;
+}
+
+/* walking bread */
+.walkingBread{
+  width: 300px;
+  height: auto;
+  position:absolute;
+  top:52%;
+  left:15%;
+  
+  display:none;
+  
+}
+.walkingAnimate{
+    animation: breadWalk 1s linear 0s 1 running;
+    
+}
+
+@keyframes breadWalk {
+ to{
+  
+  top:90%;
+  left:-10%;
+  }
+}
