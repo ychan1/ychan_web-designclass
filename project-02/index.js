@@ -37,23 +37,13 @@ $( "#breadHouse" ).click( function() {
          }
 });
 
-$( "#breadHouse" ).click( function() {
-        // $("#walkingBread").fadeIn(400,'linear',function(){
-        //         $("#walkingBread").animate({top:'90%',
-        //         left:'-5%'},800,'linear');  }
-        
-        if(!$(".walkingBread").hasClass('walkingAnimate')) {    
-                $(".walkingBread").fadeIn().addClass('walkingAnimate');   
-                
-         } 
-         else {     
-                $(".walkingBread").removeClass('walkingAnimate'); 
-                
-         }
+let breadCounter = 0;//this has to be outside your click event listener so it doesn't reset to 0 when someone clicks!
 
-
-
- })
+$("#breadHouse").click(function() {
+    breadCounter++;//this is to add 1 to breadCounter each time someone clicks
+    let walkingBread = `<img class="walkingBread walkingAnimate" src="1.gif" alt="the walking bread" style="z-index: -${breadCounter}">`
+    $("body").append(walkingBread);//add bread after each other
+});
        
 
 

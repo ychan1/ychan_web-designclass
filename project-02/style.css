@@ -208,16 +208,18 @@ display:none;
   top:52%;
   left:15%;
   
-  display:none;
-  
 }
 .walkingAnimate{
-    animation: breadWalk 1s linear 0s 1 running;
+  animation: breadWalk 1s linear 0s 1 forwards running;
     
 }
 
 @keyframes breadWalk {
- to{
+  0%{
+    opacity: 0%;}
+  5%{
+    opacity:100% ;}
+ 100%{
   
   top:90%;
   left:-10%;
