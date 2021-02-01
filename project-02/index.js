@@ -1,6 +1,8 @@
 $("document").ready(function() {
 
 var x = document.getElementById("breadButtonAudio"); 
+var y = document.getElementById("breadWalkAudio"); 
+
 
 // bread button
 $("#bread1").click(function(){
@@ -17,13 +19,16 @@ $("#bread2").click(function() {
          
 });
 
+var text = $('h1').val()||$('h1').text();
 $(".slider.round").click(function() {
+        
         if(!$(document.body).hasClass('darkMode')) {    
         $(document.body).addClass('darkMode');   
         $('h1').text('CHOCO');
         } else {     
         $(document.body).removeClass('darkMode'); 
-        $('h1').text('VANILLA');  }
+        $('h1').text(text);
+          }
 
         
 })
@@ -43,6 +48,7 @@ $("#breadHouse").click(function() {
     breadCounter++;//this is to add 1 to breadCounter each time someone clicks
     let walkingBread = `<img class="walkingBread walkingAnimate" src="1.gif" alt="the walking bread" style="z-index: -${breadCounter}">`
     $("body").append(walkingBread);//add bread after each other
+    y.play();
 });
        
 

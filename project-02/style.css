@@ -28,7 +28,7 @@ text-shadow: 1px 1px rgb(243, 255, 131), -2px -2px rgb(214, 66, 21);
     height: 118.83px;
     left: 15%;
     top: 4%;
-
+    z-index: 0;
 }
 
 #bread1{
@@ -56,12 +56,15 @@ text-shadow: 1px 1px rgb(243, 255, 131), -2px -2px rgb(214, 66, 21);
 .buttons{
 font-family: pixelated;
 font-size: 18px;
-color: #FF9E44;
 text-shadow: 0px 4px 4px rgba(233, 73, 73, 0.25);
-cursor: pointer;
 display:none;
 }
-
+a{
+  color: #FF9E44;
+}
+a:hover{
+  color: #7c2300;
+}
 #homeButton{
     width: 57px;
     position: absolute;
@@ -192,7 +195,7 @@ display:none;
   height: 694px;
   left: 8%;
   top: 25%;
-  z-index: 0;
+  z-index: -1000;
   /* animation: breadIcon 200ms linear 0s 1;
   animation-play-state:paused; */
 }
@@ -210,14 +213,14 @@ display:none;
   
 }
 .walkingAnimate{
-  animation: breadWalk 1s linear 0s 1 forwards running;
+  animation: breadWalk 1.5s linear 0s 1 forwards running;
     
 }
 
 @keyframes breadWalk {
   0%{
     opacity: 0%;}
-  5%{
+  10%{
     opacity:100% ;}
  100%{
   
@@ -225,3 +228,32 @@ display:none;
   left:-10%;
   }
 }
+
+
+
+/* ABOUT SECTION */
+.svgs {
+  
+  width: 90vw;
+  height: auto;
+  transform: scaleX(-1) translate(20%,10%);
+  stroke: #3d2002;
+  
+}
+
+.path1 {
+  position: absolute;
+  
+  z-index: -2;
+  stroke-dasharray: 500;
+      stroke-dashoffset: 800;
+      animation: dash 5s linear alternate-reverse infinite;
+  }
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  } 
