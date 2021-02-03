@@ -51,6 +51,30 @@ $("#breadHouse").click(function() {
     y.play();
 });
        
+// $(window).mousemove(function(e){
+//         $("#breadCursor").css({
+//                 top: e.clientY,
+//                 left: e.clientX,
+//         });
+// });
+
+$("#founButton").mouseover(function(){
+        $("#foun1").hide();
+        $("#foun2").show();
+});
+$("#portButton").mouseover(function(){
+        $("#port1").hide();
+        $("#port2").show();
+});
+$("#otherButton").mouseover(function(){
+        $("#other1").hide();
+        $("#other2").show();
+});
+
+
+
+
+
 
 
 });

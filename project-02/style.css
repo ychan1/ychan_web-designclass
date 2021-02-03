@@ -7,6 +7,7 @@
 body{
     background-color: #FFDFA1;
     overflow: hidden;
+    /* cursor: url('cursorbread.png'); */
 }
 
 h1{
@@ -18,9 +19,11 @@ font-size: 96px;
 color: #FF9E44;
 text-shadow: 1px 1px rgb(243, 255, 131), -2px -2px rgb(214, 66, 21);
 
-
 }
 
+.longTitles{
+  left: 45%;
+}
 
 .textBox{
     position: absolute;
@@ -123,7 +126,7 @@ a:hover{
     display: inline-block;
     width: 160px;
     height: 80px;
-    left:80%;
+    left:85%;
     top:5%;
   }
   
@@ -257,3 +260,86 @@ a:hover{
       stroke-dashoffset: 0;
     }
   } 
+
+
+/* CONTACTS PAGE */
+.chefBread {
+  transform: scale(1.5);
+  z-index: -1;
+    position: absolute;
+    
+    left: 58%;
+    top: 35%;
+}
+
+
+
+/* cursor */
+/* #breadCursor{
+  position: absolute;
+  width: 10%;
+  height:auto;
+} */
+
+/* WORKS PAGE */
+.artButtons{
+  font-family: Nunito;
+font-style: normal;
+font-weight: 800;
+font-size: 18px;
+
+}
+
+#founButton{
+  position: absolute;
+left: 15%;
+top: 73%;
+}
+
+#portButton{
+  position: absolute;
+    left: 45%;
+    top: 73%;
+}
+#otherButton{
+  position: absolute;
+  left: 75%;
+  top: 73%;
+}
+
+#foun1{
+  position: absolute;
+  left: 9%;
+  top: 35%;
+}
+#port1{
+  position: absolute;
+  left: 38%;
+  top: 35%;
+}
+#other1{  
+
+position: absolute;
+left: 67%;
+top:35%;
+}
+
+#foun2{
+  position: absolute;
+  left: 9%;
+  top: 35%;
+  display:none;
+}
+#port2{
+  position: absolute;
+  left: 38%;
+  top: 35%;
+  display:none;
+}
+#other2{  
+
+position: absolute;
+left: 67%;
+top:35%;
+display:none;
+}
