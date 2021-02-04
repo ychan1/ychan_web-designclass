@@ -34,6 +34,7 @@ text-shadow: 1px 1px rgb(243, 255, 131), -2px -2px rgb(214, 66, 21);
     z-index: 0;
 }
 
+
 #bread1{
     position: absolute;
     width: 175px;
@@ -106,11 +107,47 @@ a:hover{
         transform: translateY(-10px);
     }
 }
+.panelDiv{
+  position: absolute;
+  width:30%;
+  height:70%;
+  top:20%;
+  left:55%;
+  background-image: url(panel.png);
+  background-size: cover; 
+  background-position: center;
+}
+h3{
+  font-family: 'Pacifico', cursive;
+  color: rgb(255, 141, 34);
+  font-weight: normal;
+  font-size: 40px;
 
+  
+}
+.panelTextnButtons{
+  position:relative;
+  top:20%;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
 
+.panelButtons{
+width: 117px;
+height: 32px;
+margin:10px;
+text-align: center;
+background: #fcb54c;
+border-radius: 50px;
+}
 
-
-
+.panelButtons:hover{
+  background: #d6691f;
+  cursor: pointer;
+}
 
 /* fonts */
 @font-face {
@@ -236,11 +273,13 @@ a:hover{
 
 /* ABOUT SECTION */
 .svgs {
-  
+  position: absolute;;
   width: 90vw;
   height: auto;
   transform: scaleX(-1) translate(20%,10%);
   stroke: #3d2002;
+  bottom:0;
+  z-index:-2;
   
 }
 
@@ -261,6 +300,15 @@ a:hover{
     }
   } 
 
+.aboutText{
+  position:absolute;
+  left:50%;
+  top:30%;
+  font-family: louvette-banner, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: x-large;
+}
 
 /* CONTACTS PAGE */
 .chefBread {
@@ -275,13 +323,18 @@ a:hover{
 
 
 /* cursor */
-/* #breadCursor{
+#breadCursor{
   position: absolute;
-  width: 10%;
+  width: 5%;
   height:auto;
-} */
+  pointer-events:none;
+  z-index: 5;
+}
 
 /* WORKS PAGE */
+.yesScroll{
+  overflow-y: scroll;
+}
 .artButtons{
   font-family: Nunito;
 font-style: normal;
@@ -290,18 +343,18 @@ font-size: 18px;
 
 }
 
-#founButton{
+.founButton{
   position: absolute;
 left: 15%;
 top: 73%;
 }
 
-#portButton{
+.portButton{
   position: absolute;
     left: 45%;
     top: 73%;
 }
-#otherButton{
+.otherButton{
   position: absolute;
   left: 75%;
   top: 73%;
@@ -342,4 +395,136 @@ position: absolute;
 left: 67%;
 top:35%;
 display:none;
+}
+
+/* foundations page */
+
+#worksSideButtonsF {
+  position: absolute;
+  left: 3%;
+  top:55%;
+  font-size: 15px;
+  
+}
+#worksSideButtonsP {
+  position: absolute;
+  left: 3.5%;
+  top:75%;
+  font-size: 15px;
+}
+#worksSideButtonsO {
+  position: absolute;
+  left: 4.5%;
+  top:95%;
+  font-size: 15px;
+}
+
+#foun1.smallWorkIconsF {
+  position: absolute;
+  left: 1%;
+  top:38%;
+  width: 10%;
+  height: auto;
+  
+}
+#foun2.smallWorkIconsF {
+  position: absolute;
+  left: 1%;
+  top:38%;
+  width: 10%;
+  height: auto;
+}
+#port1.smallWorkIconsP {
+  position: absolute;
+  left: 1%;
+  top:58%;
+  width: 10%;
+  height: auto;
+  
+}
+#port2.smallWorkIconsP {
+  position: absolute;
+  left: 1%;
+  top:58%;
+  width: 10%;
+  height: auto;
+}
+#other1.smallWorkIconsO {
+  position: absolute;
+  left: 1%;
+  top:78%;
+  width: 10%;
+  height: auto;
+  
+}
+#other2.smallWorkIconsO {
+  position: absolute;
+  left: 1%;
+  top:78%;
+  width: 10%;
+  height: auto;
+}
+
+
+
+/* ---- grid ---- */
+.main{
+  position: absolute;
+  width: 80%;
+  left:15%;
+  z-index: -2;
+  top:0;
+}
+.main .gallery{
+  position: relative;
+ 
+  margin:auto;
+  padding:15% 0;
+  display:grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 2vh;
+  grid-auto-flow:dense;
+  
+}
+.main .gallery .img{
+  position: relative;
+  height:100%;
+  width:100%;
+  overflow:hidden;
+}
+.main .gallery .img:first-child{
+  grid-column-start: span 2;
+  grid-row-start: span 2;
+}
+.main .gallery .img:nth-child(2n+3){
+  grid-row-start: span 2;
+}
+.main .gallery .img:nth-child(4n+5){
+  grid-row-start: span 1;
+  grid-column-start: span 2;
+}
+.main .gallery .img:nth-child(6n+7){
+  grid-row-start: span 5;
+  
+}
+.main .gallery .img:nth-child(8n+9){
+  grid-row-start: span 1;
+  grid-column-start: span 3;
+  
+}
+.main .gallery .img:nth-child(2n+15){
+  grid-row-start: span 2;
+  grid-column-start: span 2;
+  
+}
+.main .gallery .img:nth-child(2n+13){
+  grid-row-start: span 1;
+  grid-column-start: span 1;
+  
+}
+.main .gallery .img img{
+ 
+  height:100%;
+  width:100%;
+  object-fit: cover;
 }

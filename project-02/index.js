@@ -51,27 +51,34 @@ $("#breadHouse").click(function() {
     y.play();
 });
        
-// $(window).mousemove(function(e){
-//         $("#breadCursor").css({
-//                 top: e.clientY,
-//                 left: e.clientX,
-//         });
-// });
+$(window).mousemove(function(e){
+        $("#breadCursor").css({
+                top: e.clientY,
+                left: e.clientX,
+        });
+});
 
-$("#founButton").mouseover(function(){
+$(".founButton").mouseenter(function(){
         $("#foun1").hide();
         $("#foun2").show();
+}).mouseleave(function(){
+        $("#foun2").hide();
+        $("#foun1").show();
 });
-$("#portButton").mouseover(function(){
+$(".portButton").mouseover(function(){
         $("#port1").hide();
         $("#port2").show();
+}).mouseleave(function(){
+        $("#port2").hide();
+        $("#port1").show();
 });
-$("#otherButton").mouseover(function(){
+$(".otherButton").mouseover(function(){
         $("#other1").hide();
         $("#other2").show();
-});
-
-
+}).mouseleave(function(){
+        $("#other2").hide();
+        $("#other1").show();
+});;
 
 
 
