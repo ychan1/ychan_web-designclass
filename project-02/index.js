@@ -42,15 +42,43 @@ $( "#breadHouse" ).click( function() {
          }
 });
 
-let breadCounter = 0;//this has to be outside your click event listener so it doesn't reset to 0 when someone clicks!
 
+//walking bread    
+let breadCounter = 0;   //this has to be outside your click event listener so it doesn't reset to 0 when someone clicks!
+var bun = true;
+var meringue = false;
+var caramel = false;
 $("#breadHouse").click(function() {
     breadCounter++;//this is to add 1 to breadCounter each time someone clicks
-    let walkingBread = `<img class="walkingBread walkingAnimate" src="1.gif" alt="the walking bread" style="z-index: -${breadCounter}">`
-    $("body").append(walkingBread);//add bread after each other
+    let whichBread;
+    if(bun==true) {
+        whichBread = "1.gif";
+    } else if(meringue==true) {
+        whichBread = "mWalk.gif";
+    } else if(caramel==true) {
+        whichBread = "cWalk.gif";
+    }
+    let walkingBread = `<img class="walkingBread walkingAnimate" src="${whichBread}" alt="the walking bread" style="z-index: -${breadCounter}">`
+    $("body").append(walkingBread);
     y.play();
 });
-// bread house button
+$("#bunButton").click(function() {
+    bun = true;
+    meringue = false;
+    caramel = false;
+});
+$("#meringueButton").click(function() {
+    bun = false;
+    meringue = true;
+    caramel = false;
+});
+$("#caramelButton").click(function() {
+    bun = false;
+    meringue = false;
+    caramel = true;
+});
+
+
 $( "#cakeButton" ).click( function() {
         $("#breadHouse").attr("src", "cakeMachine.png");
 })
@@ -60,19 +88,6 @@ $( "#croissantButton" ).click( function() {
 $( "#pancakeButton" ).click( function() {
         $("#breadHouse").attr("src", "pancakeMachine.png");
 })
-//walking bread       
-$( "#bunButton" ).click( function() {
-        $(".walkingBread").attr("src", "1.gif");
-})
-$( "#meringueButton" ).click( function() {
-        $(".walkingBread").attr("src", "mWalk.gif");
-})
-$( "#caramelButton" ).click( function() {
-        $(".walkingBread").attr("src", "cWalk.gif");
-})
-
-
-
 
 
 
