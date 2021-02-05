@@ -50,13 +50,38 @@ $("#breadHouse").click(function() {
     $("body").append(walkingBread);//add bread after each other
     y.play();
 });
-       
-$(window).mousemove(function(e){
-        $("#breadCursor").css({
-                top: e.clientY,
-                left: e.clientX,
-        });
-});
+// bread house button
+$( "#cakeButton" ).click( function() {
+        $("#breadHouse").attr("src", "cakeMachine.png");
+})
+$( "#croissantButton" ).click( function() {
+        $("#breadHouse").attr("src", "breadMachine.png");
+})
+$( "#pancakeButton" ).click( function() {
+        $("#breadHouse").attr("src", "pancakeMachine.png");
+})
+//walking bread       
+$( "#bunButton" ).click( function() {
+        $(".walkingBread").attr("src", "1.gif");
+})
+$( "#meringueButton" ).click( function() {
+        $(".walkingBread").attr("src", "mWalk.gif");
+})
+$( "#caramelButton" ).click( function() {
+        $(".walkingBread").attr("src", "cWalk.gif");
+})
+
+
+
+
+
+
+
+
+
+
+
+
 
 $(".founButton").mouseenter(function(){
         $("#foun1").hide();
@@ -80,11 +105,45 @@ $(".otherButton").mouseover(function(){
         $("#other1").show();
 });;
 
-
-
-
-
-});
+var html ="";
+        for(i=0;i<16;i++){
+                //in your html template inside the <img> tag, i added an inline "onerror" event listener which will fire if there's a problem loading your file (aka, when your site can't find the image because of the wrong extension). The format for doing that is onerror="myFunction()", which is how you'd tell it to run a certain javascript function if there's a loading problem. You could write a "myFunction" function inside your javascript file if you need to do something complicated, but in this case, all you need is to update the src to have a different extension. So I've just written vanilla javascript straight into the onerror event listener. The javascript is this.src='newSource', which is just saying "change the src of THIS img to 'newSource'. In this case, 'newSource' is actually the exact same as the regular src except for the file extension, so I just repeated the same thing from <img src="..."> and only changed the .jpg to .jpeg at the end (or from .png to .gif in the case of your portfolio loop). This will only work if there's only 1 other type of extension in your folder! 
+                html+=`
+                        <div class="img">
+                        <img src="../foundations/f${[i+1]}.jpg" onerror="this.src='../foundations/f${[i+1]}.jpeg';">
+                        </div>
+                
+                `;
+        }
+        $("#founGallery").append(html);
+        
+        var htmlport ="";
+        for(i=0;i<14;i++){
+                htmlport+=`
+                        <div class="img">
+                        <img  src="../portfolio/p${[i+1]}.jpg" onerror="this.src='../portfolio/p${[i+1]}.gif';">
+                        </div>
+                
+                `;
+        }
+        $("#portGallery").append(htmlport);
+        
+        var htmlother ="";
+        for(i=0;i<7;i++){
+                htmlother+=`
+                        <div class="img">
+                        <img  src="../other/o${[i+1]}.jpg">
+                        </div>
+                
+                `;
+        }
+        $("#otherGallery").append(htmlother);
+        
+        });
+        
+        
+        
+        
 
 
 

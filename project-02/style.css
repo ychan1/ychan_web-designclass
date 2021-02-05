@@ -2,14 +2,15 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    cursor: url('cursorbread.png'),pointer;
+
 }
 
 body{
     background-color: #FFDFA1;
     overflow: hidden;
-    /* cursor: url('cursorbread.png'); */
+    
 }
-
 h1{
 position: absolute;
 left: 55%;
@@ -41,9 +42,12 @@ text-shadow: 1px 1px rgb(243, 255, 131), -2px -2px rgb(214, 66, 21);
     height: 174px;
     left: 2%;
     top: 5%;
-    cursor: pointer;
+    
     animation: breadIcon 0.5s linear 0s 1;
     animation-play-state:paused;
+}
+#bread1:hover{
+  cursor: url("cursorbreadhover.png"),pointer;
 }
 #bread2{
     position: absolute;
@@ -51,12 +55,14 @@ text-shadow: 1px 1px rgb(243, 255, 131), -2px -2px rgb(214, 66, 21);
     height: 174px;
     left: 2%;
     top: 5%;
-    cursor: pointer;
+   
     display:none;
     animation: breadIcon 0.5s linear 0s 1;
     animation-play-state:paused;
 }
-
+#bread2:hover{
+  cursor: url("cursorbreadhover.png"),pointer;
+}
 .buttons{
 font-family: pixelated;
 font-size: 18px;
@@ -107,6 +113,7 @@ a:hover{
         transform: translateY(-10px);
     }
 }
+/* panel */
 .panelDiv{
   position: absolute;
   width:30%;
@@ -123,7 +130,13 @@ h3{
   font-weight: normal;
   font-size: 40px;
 
-  
+}
+h4{
+  font-family: pixelated;
+  text-transform: uppercase;
+  color: rgb(160, 45, 0);
+  position:relative;
+  top:6px;
 }
 .panelTextnButtons{
   position:relative;
@@ -146,7 +159,7 @@ border-radius: 50px;
 
 .panelButtons:hover{
   background: #d6691f;
-  cursor: pointer;
+  cursor: url("cursorbreadhover.png"),pointer;
 }
 
 /* fonts */
@@ -175,7 +188,7 @@ border-radius: 50px;
   
   .slider {
     position: absolute;
-    cursor: pointer;
+    
     top: 0;
     left: 0;
     right: 0;
@@ -184,7 +197,9 @@ border-radius: 50px;
     -webkit-transition: .4s;
     transition: .4s;
   }
-  
+  .slider:hover{
+    cursor: url("cursorbreadhover.png"),pointer;
+  }
   .slider:before {
     position: absolute;
     content: "";
@@ -229,7 +244,7 @@ border-radius: 50px;
 
 /* bread animated section */
 #breadHouse {
-  cursor: pointer;
+  
   position: absolute;
   width: 657px;
   height: 694px;
@@ -238,6 +253,9 @@ border-radius: 50px;
   z-index: -1000;
   /* animation: breadIcon 200ms linear 0s 1;
   animation-play-state:paused; */
+}
+#breadHouse:hover{
+  cursor: url("cursorbreadhover.png"),pointer;
 }
 .breadhouseButton{
   animation: breadIcon 150ms linear 0s 1 running;
@@ -323,13 +341,13 @@ border-radius: 50px;
 
 
 /* cursor */
-#breadCursor{
+/* #breadCursor{
   position: absolute;
   width: 5%;
   height:auto;
   pointer-events:none;
   z-index: 5;
-}
+} */
 
 /* WORKS PAGE */
 .yesScroll{
