@@ -291,12 +291,13 @@ border-radius: 50px;
 
 /* ABOUT SECTION */
 .svgs {
-  position: absolute;;
-  width: 90vw;
+  position: absolute;
+  width: 50vw;
   height: auto;
+  bottom: 0;
   transform: scaleX(-1) translate(20%,10%);
   stroke: #3d2002;
-  bottom:0;
+ opacity: 0.3;
   z-index:-2;
   
 }
@@ -320,14 +321,143 @@ border-radius: 50px;
 
 .aboutText{
   position:absolute;
-  left:50%;
+  left:45%;
   top:30%;
   font-family: louvette-banner, serif;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
-  font-size: x-large;
+  font-size: xx-large;
+  color: #c95a00;
+  width: 50%;
+  animation: aboutTextAni 2s ease-in-out 0s;
 }
 
+@keyframes aboutTextAni{
+ from{
+    left:110%;
+    opacity: 0;
+  }
+  to{
+    left:45%;
+    opacity: 1;
+  }
+}
+.aboutGifs1{
+  cursor: url("cursorbreadhover.png"),pointer;
+ position: absolute;
+ top:130%; 
+ left:40%;
+ width:20%;
+ height: auto;
+}
+.aboutGifs2{
+  cursor: url("cursorbreadhover.png"),pointer;
+  position: absolute;
+  top:130%; 
+  left:60%;
+  width:20%;
+ height: auto;
+ }
+ .aboutGifs3{
+  cursor: url("cursorbreadhover.png"),pointer;
+  position: absolute;
+  top:130%; 
+  left:80%;
+  width:20%;
+ height: auto;
+ }
+.imgDesc{
+  font-family: louvette-banner, serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 30px;
+  color: #c95a00;
+  position: absolute;
+  display:none;
+  top:135%;
+}
+.imageDesc1{
+  
+  position: absolute;
+
+ left:47%;
+ 
+}
+.imageDesc2{
+  position: absolute;
+
+ left:65%;
+
+}
+.imageDesc3{
+  position: absolute;
+
+ left:85%;
+ 
+}
+.crackEgg{
+position: absolute;
+top:25%; 
+width:30%;
+left:10%;
+height: auto;
+
+}
+.crackEgg2{
+  position: absolute;
+  top:80%; 
+  width:30%;
+  left:10%;
+  height: auto;
+  display: none;
+  }
+.eggBowl{
+  position: absolute;
+  top:160%;  
+  left:5%;
+  width:40%;
+  height: auto;
+
+}
+.eggBowl2{
+  position: absolute;
+  top:110%;  
+  left:5%;
+  width:40%;
+  height: auto;
+  display: none;
+}
+.bunRecipe{
+  top:55%;
+  position: absolute;
+  right:10%;
+  width:40%;
+  height: auto ;
+  background: #fff0c8;
+  border-radius: 50px;
+  padding: 80px;
+  display: none;
+ 
+}
+.recipeTitle{
+  font-family: louvette-banner, serif;
+  font-weight: 800;
+  font-style: normal;
+  text-align: center;
+}
+.recipeText{
+  font-family: louvette-banner, serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: x-large;
+  color: #c95a00;
+}
+.clickPrompt{
+  position: absolute;
+  top:160%; 
+  left:66%;
+  
+}
 /* CONTACTS PAGE */
 .chefBread {
   transform: scale(1.5);
@@ -336,22 +466,52 @@ border-radius: 50px;
     
     left: 58%;
     top: 35%;
+    animation: chefBreadAni 1s ease-in 0s;
+}
+@keyframes chefBreadAni {
+  from{
+    top:100%;
+  }
+  to{
+    top: 35%;
+  }
 }
 
-
-
-/* cursor */
-/* #breadCursor{
-  position: absolute;
-  width: 5%;
-  height:auto;
-  pointer-events:none;
-  z-index: 5;
-} */
-
 /* WORKS PAGE */
+
 .yesScroll{
   overflow-y: scroll;
+}
+#squares{
+  height:100vh;
+  width:100vw;
+  position:fixed;
+  top:0;
+  z-index: -2000;
+}
+span{
+  position:absolute;
+  pointer-events: none;
+  background-color: #c95a00;
+  z-index: -1001;
+  animation: animate 5s linear infinite;
+}
+@keyframes animate{
+  0%{
+    transform:scale(0) translateY(0) rotate(0deg);
+    opacity: 0;
+
+  }
+  10%{
+    opacity: 1;
+  }
+  90%{
+    opacity: 0;
+  }
+  100%{
+    transform:scale(1) translateY(-500%) rotate(360deg);
+    opacity: 1;
+  }
 }
 .artButtons{
   font-family: Nunito;
@@ -414,6 +574,7 @@ left: 67%;
 top:35%;
 display:none;
 }
+
 
 /* foundations page */
 
@@ -486,12 +647,25 @@ display:none;
 
 
 /* ---- grid ---- */
+/* .frame{
+  position: absolute;
+width: 83%;
+height: 420vh;
+left: 13%;
+top: 20%;
+  border: 5px solid #ffb340;
+  
+  filter: drop-shadow(13px 22px 4px rgba(124, 68, 5, 0.25));
+
+} */
 .main{
   position: absolute;
   width: 80%;
   left:15%;
   z-index: -2;
   top:0;
+
+  
 }
 .main .gallery{
   position: relative;
@@ -545,4 +719,121 @@ display:none;
   height:100%;
   width:100%;
   object-fit: cover;
+}
+
+
+/* contact page */
+h5{
+  font-family: Pixelated;
+  font-size: 60px;
+  position: absolute;
+  top:25%;
+  left:15%;
+  color:#d6691f;
+}
+input[type=text] {
+
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid  #d6691f;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  border-radius: 25px;
+  background-color:  #d6691f;
+}
+
+input[type=text]:focus {
+  background-color: #ffa835e5;
+  border: 3px solid rgb(233, 92, 11);
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  
+  font-family: Pixelated;
+  color:  #d6691f;
+
+}
+form{
+  position:absolute;
+  top:35%;
+  left:15%;
+ 
+}
+::placeholder{
+  font-family: Pixelated;
+  color:#7c2300;
+}
+input[type=submit] {
+  background-color:  #d6691f;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: url(cursorbreadhover.png),pointer;
+  position: absolute;
+  top:65%;
+  left:40%;
+  font-family: Nunito;
+}
+
+input[type=submit]:hover {
+  background-color: #83430f;
+}
+
+@media screen and (max-width: 768px) {
+  label, .message  {
+    width: 100%;
+    margin-top: 0;
+  }
+  input[type=submit]{
+  top:75%;
+  }
+  #homeButton{
+   
+    left: 20%;
+   
+    
+}
+
+#aboutButton{ 
+    
+    left: 33%;
+  
+    
+}
+#workButton{ 
+   
+    left: 48%;
+   
+}
+#contactButton{ 
+   
+    left:60%;
+   
+}
+
+h1{
+  left:60%;
+  top:15%;
+  font-size: 50px;
+}
+.switch{
+  left:79%;
+}
+.chefBread {
+  top:60%;
+  left:35%;
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
 }

@@ -2,6 +2,7 @@ $("document").ready(function() {
 
 var x = document.getElementById("breadButtonAudio"); 
 var y = document.getElementById("breadWalkAudio"); 
+var z = document.getElementById("giggleAudio"); 
 
 
 // bread button
@@ -153,12 +154,100 @@ var html ="";
                 `;
         }
         $("#otherGallery").append(htmlother);
+
+$('.aboutGifs1').hover(function(){
+        $('.imageDesc1').fadeToggle("slow", "linear");
+})
+$('.aboutGifs2').hover(function(){
+        $('.imageDesc2').fadeToggle("slow", "linear");
+})
+
+$('.aboutGifs3').hover(function(){
+        $('.imageDesc3').fadeToggle("slow", "linear");
+})
+
+// works page
+const colors =[
+        '#ff9900',
+        '#ffad33',
+        '#ff8000',
+        '#ffff4d'
+]
+function createSquare(){
+        const section = document.getElementById('squares');
+        const square = document.createElement('span');
+
+        var size = Math.random() *50;
+
+        square.style.width =20+size+'px';
+        square.style.height =20+size+'px';
+
+        square.style.top =Math.random() * innerHeight+'px';
+        square.style.left =Math.random() * innerWidth+'px';
+
+        const bg =colors[Math.floor(Math.random()*colors.length)];
+        square.style.background =bg;
+
+        section.appendChild(square);
+        setTimeout(()=>{
+                square.remove()
+        },6000)
+}
+setInterval(createSquare,150);
+
+//on scroll
+
+$(window).scroll(function(){
         
+        
+        $(".crackEgg").animate({
+                top:'80%'       
+        },3000,'linear',function(){
+                $(".crackEgg").hide();
+                $(".crackEgg2").fadeIn(1000);
+                setTimeout(function(){
+                        $(".crackEgg2").fadeOut("slow");
+                    },500);
         });
-        
-        
-        
-        
+
+$(".eggBowl").animate({
+                top:'110%'       
+        },3000,'linear',function(){
+                $(".eggBowl").fadeOut(3200);
+                $(".eggBowl2").fadeIn(3200);
+              
+        });
+})
+$('.aboutGifs1').click(function(){
+        $("#bR1").fadeToggle();
+
+})
+$('.aboutGifs2').click(function(){
+        $("#bR2").fadeToggle();
+
+})
+$('.aboutGifs3').click(function(){
+        $("#bR3").fadeToggle();
+
+})
+
+
+$('#sendClick').click(function(){
+        $('.chefBread').animate({
+                top: '30%'
+              }, 100);
+              $('.chefBread').animate({
+                top: '35%'
+              }, 100);       
+        z.play();
+        })
+      
 
 
 
+
+
+
+
+
+});

@@ -14,12 +14,18 @@
         <script src="index.js"></script>
 
     </head>
+    <section>
 <body>
     <audio id="breadButtonAudio">
         <source src="creature.mp3"
         type="audio/mp3">
         "Your browser does not support the audio element."
         </audio> 
+    <audio id="giggleAudio">
+            <source src="giggle.mp3"
+            type="audio/mp3">
+            "Your browser does not support the audio element."
+    </audio> 
     
     <!-- bread click icon -->
 <img id="bread1" src="breadimg1.png">
@@ -29,7 +35,7 @@
        
     <nav class="buttons">
         <ul class="nav-links">
-            <li><a href="index.html"><h2 id="homeButton">HOME</h2></a></li>
+            <li><a href="index.html" ><h2 id="homeButton">HOME</h2></a></li>
             <li><a href="about.html"><h2 id="aboutButton">ABOUT</h2></a></li>
             <li><a href="workNav/index.html"><h2 id="workButton">WORK</h2></a></li>
             <li><a href="contact.html"><h2 id="contactButton">CONTACT</h2></a></li>
@@ -53,15 +59,25 @@
       
     </nav>
 
-  
+  <h5>GET IN TOUCH!</h5>
+  <form>
+      
+    <label for="name"> Name</label>
+    <input type="text" id="name" name="name" placeholder="Your name..."  style="width:350px">
+    <br>
+    <label for="message">Message</label>
+    <input type="text" id="message" name="message" placeholder="Write something..." style="height:200px;width:500px">
+  </form>
+  <input id="sendClick" type="submit" value="Send Message!">
 <label class="switch">
     <input type="checkbox">
-    <span class="slider round"></span>
+    <div class="slider round"></div>
   </label>
 
 <img class='chefBread' src='chefbread.png'>
 
  </body> 
+</section>
 
 
 
