@@ -9,8 +9,18 @@
 body{
     background-color: #FFDFA1;
     overflow: hidden;
-    
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    min-height: 100vh;
+    -webkit-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+   
 }
+  /* dark mode */
+.darkMode{
+
+    background-color: rgb(85, 34, 14);
+} 
 h1{
 position: absolute;
 left: 55%;
@@ -234,12 +244,7 @@ border-radius: 50px;
     border-radius: 50%;
   }
 
-  /* dark mode */
-.darkMode{
-   -webkit-transition: background-color 0.3s ease-in-out;
-    transition: background-color 0.3s ease-in-out;
-    background-color: rgb(85, 34, 14);
-}
+
 
 
 
@@ -327,7 +332,7 @@ border-radius: 50px;
   font-family: louvette-banner, serif;
   font-weight: 500;
   font-style: normal;
-  font-size: xx-large;
+  font-size: 35px;
   color: #c95a00;
   width: 50%;
   animation: aboutTextAni 2s ease-in-out 0s;
@@ -454,7 +459,7 @@ z-index: 1;
   font-family: louvette-banner, serif;
   font-weight: 500;
   font-style: normal;
-  font-size: x-large;
+  font-size: 25px;
   color: #c95a00;
 }
 .clickPrompt{
@@ -787,58 +792,224 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #83430f;
 }
+/* transition */
+.cover {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: -100vw;
+  z-index: 1000;
+}
+.transition.slide .cover1 {
+  background-color: #FF9E44;
+  animation: slide 0.3s ease-in-out forwards;
+}
+.transition.slide .cover2 {
+  background-color: #FFDFA1;
+  animation: slide 0.3s ease-in-out forwards;
+  animation-delay: 0.3s;
+}
 
+@keyframes slide {
+  from {
+    left: -100vw;
+  }
+  to {
+    left: 0;
+    
+  }
+}
 @media screen and (max-width: 768px) {
+ /* contact */
   label, .message  {
     width: 100%;
     margin-top: 0;
   }
   input[type=submit]{
-  top:75%;
+  top:85%;
   }
   #homeButton{
-   
-    left: 20%;
+   top:5%;
+    left: 25%;
    
     
 }
 
 #aboutButton{ 
-    
-    left: 33%;
+  top:5%;
+    left: 38%;
   
     
 }
 #workButton{ 
-   
-    left: 48%;
+  top:5%;
+    left: 53%;
    
 }
 #contactButton{ 
-   
-    left:60%;
+  top:5%;
+    left:65%;
    
 }
 
 h1{
-  left:60%;
+  left:93%;
   top:15%;
   font-size: 50px;
+  font-size: 30px;
 }
 .switch{
-  left:79%;
+  left:90%;
 }
 .chefBread {
   top:60%;
-  left:35%;
-  transform: scale(1.1);
+  left:5%;
+  transform: scale(0.8);
+}
+/* home */
+.panelDiv{
+  top:30%;
+  width:100%;
+  height: auto;
+  left: 10%;
+  background-image: none;
+}
+h3{
+  
+  font-size: 20px;
+
 }
 
+.panelTextnButtons{
 
+  flex-direction: row;
 
+  
+}
+.textBox{
+  width: 280px;
+  left: 20%;
+  top: 0;
+    
+}
+.buttons{
+ 
+  font-size: 13px;
+}
 
+@keyframes breadWalk {
+  0%{left:30%;}
+ 100%{
+  
+  top:120%;
+  left:-60%;
+  }
+}
+/* ABOUT */
+.aboutText{
+    font-size: 20px;}
 
+    .imgDesc{
+      font-size: 20px;
+    }
+    .aboutGifs1{
+      width:30%;
+      height:auto;
+    }
+    .aboutGifs2{
+      width:30%;
+      height:auto;
+    }
+    .aboutGifs3{
+      width:30%;
+      height:auto;
+    }
+    .crackEgg{
+      width:45%;
+      
+    }
+    .bunRecipe{
+      top:75%;
+      width:250px;
+      height:400px;
+      padding: 20px;
+      right:0;
+    }
+    .recipeText{
+      font-size: 12px;
+    }
+    .clickPrompt{
+      font-size: 10px;
+    }
 
+/* works page */
 
+#foun1{
+  width:40%;
+}
+#foun2{
+  width:40%;
+}
+#port1{
+  width:40%;
+}
+#port2{
+  width:40%;
+}
+#other1{
+  width:40%;
+}
+#other2{
+  width:40%;
+}
 
+ .founButton{
+   left:17%;
+  top: 55%;
+}
+.portButton{
+  left:47%;
+  top: 55%;
+}
+.otherButton{
+  left:77%;
+  top: 55%;
+}
+h2{font-size: 15px;}
+#worksSideButtonsF {
+ transform: rotate(90deg);
+ left:-10%;
+  top:50%;
+}
+#worksSideButtonsP {
+  transform: rotate(90deg);
+  left:-7%;
+  top:70%;
+}
+#worksSideButtonsO {
+  transform: rotate(90deg);
+  left:-3%;
+  top:90%;
+}
+#foun1.smallWorkIconsF {
+  transform: rotate(90deg);
+}
+#foun2.smallWorkIconsF {
+  transform: rotate(90deg);
+}
+#port1.smallWorkIconsP {
+  transform: rotate(90deg);
+  
+}
+#port2.smallWorkIconsP {
+  transform: rotate(90deg);
+}
+#other1.smallWorkIconsO {
+  transform: rotate(90deg);
+  
+}
+#other2.smallWorkIconsO {
+  transform: rotate(90deg);
+}
 }

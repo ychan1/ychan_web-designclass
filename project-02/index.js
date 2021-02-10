@@ -3,8 +3,24 @@ $("document").ready(function() {
 var x = document.getElementById("breadButtonAudio"); 
 var y = document.getElementById("breadWalkAudio"); 
 var z = document.getElementById("giggleAudio"); 
+//transition
+    //add click event listener to everything with class "link". Because <a> tags have a default behavior, we have to cancel that out first by using argument "e" in anonymous function and then using the javascript .preventDefault() method.
+    $(".link").click(function(e) {
+        e.preventDefault();
 
+        //new variable to store whatever href attribute the clicked link has
+        let thisLink = $(this).attr('href');
 
+        //adding class "slide" to the div with class "transition" because all animations are stored in CSS under .transition.slide [child]
+        $(".transition").addClass("slide");
+
+        //this is vanilla javascript for making the browser wait for a specified amount of time before running a function, in this case 900 milliseconds because that's how long it'll take for all the slide transitions to run (they're set to 0.3s each in the CSS)
+        setTimeout(function() {
+            //vanilla javascript for taking someone to a new URL. window.location is the function that's normally called when you click a link, but we have to manually call it here because we did preventDefault();
+            window.location = thisLink;
+        }, 900);
+   
+});
 // bread button
 $("#bread1").click(function(){
         $("#bread1").hide();
