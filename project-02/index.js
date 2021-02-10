@@ -166,6 +166,16 @@ $('.aboutGifs3').hover(function(){
         $('.imageDesc3').fadeToggle("slow", "linear");
 })
 
+$('#sendClick').click(function(){
+        $('.chefBread').animate({
+                top: '30%'
+              }, 100);
+              $('.chefBread').animate({
+                top: '35%'
+              }, 100);       
+        z.play();
+        })
+      
 // works page
 const colors =[
         '#ff9900',
@@ -197,55 +207,82 @@ setInterval(createSquare,150);
 
 //on scroll
 
-$(window).scroll(function(){
-        
-        
-        $(".crackEgg").animate({
-                top:'80%'       
-        },3000,'linear',function(){
-                $(".crackEgg").hide();
-                $(".crackEgg2").fadeIn(1000);
-                setTimeout(function(){
-                        $(".crackEgg2").fadeOut("slow");
-                    },500);
-        });
+//declaring a couple variables here to hold the initial position of your egg. The jQuery offset() method returns how far from the top left of the document your selected element is, so to get the top and left properties separately, you have to use object notation to get its .top and .left.
+let eggStartTop = $(".crackEgg").offset().top;
+let eggStartLeft = $(".crackEgg").offset().left;
 
-$(".eggBowl").animate({
-                top:'110%'       
-        },3000,'linear',function(){
-                $(".eggBowl").fadeOut(3200);
-                $(".eggBowl2").fadeIn(3200);
-              
-        });
-})
+//declaring a boolean set to false at first
+let cracked = false;
+
+$(window).scroll(function(){
+        //new variable "scrollPos" to hold however far down the window you've scrolled. "this" refers to the window (since it's the thing the scroll event listener is attached to), and "scrollY" is a vanilla javascript method for getting the vertical scrollbar position.
+        let scrollPos = this.scrollY;
+
+        //updating the egg's position by adding how far someone has scrolled to its initial starting position
+        //changed to animate 
+        $(".crackEgg").animate({
+                top: eggStartTop + scrollPos,
+                left: eggStartLeft
+        },100);
+
+        //this conditional checks whether the scrollbar position + the current height of the window in view is equal to the document's entire height. When it's equal, it means someone has scrolled to the bottom.
+        if($(window).scrollTop() + $(window).height() == $(document).height()) {
+
+                //switching cracked to true
+                cracked = true;
+
+                //once cracked == true, you can run all your changes without having to guess how long someone might take to get to the bottom of the page. 
+                if(cracked == true) {
+                        //got this from the callback function in your .crackEgg animation
+                        $(".crackEgg").hide();
+                        $(".crackEgg2").fadeIn(1000);
+                        setTimeout(function(){
+                                $(".crackEgg2").fadeOut("slow");
+                        },300);
+
+                        //got this from the callback function in your .eggBowl animation. Here's where you can animate the position of your eggBowl if you want.
+                        $(".eggBowl").fadeOut(3200);
+                        $(".eggBowl2").fadeIn(3200);
+
+                        //after everything runs, reset cracked to false to prevent your elements from disappearing/reappearing when someone scrolls even a little bit
+                        cracked = false;
+                }
+        }
+
+        //this is checking to see if someone is at the top of your page, aka when the window's scrollTop is 0
+        if($(window).scrollTop() == 0) {
+
+                //making sure cracked is set to false just in case someone scrolled down and up quickly
+                cracked = false;
+
+                //hiding all the things that appear at the end of your animation, and showing all the stuff that should be there at the start
+                $(".eggBowl2").hide();
+                $(".eggBowl").show();
+                $(".crackEgg").fadeIn(1000);
+
+                //resetting .crackEgg's offset to its initial starting position, since it was updated with the scrollY position when it last was on the page (before it got hidden)
+                $(".crackEgg").offset({
+                        top: eggStartTop,
+                        left: eggStartLeft
+                });
+        }
+        
+        
+});
+
+
 $('.aboutGifs1').click(function(){
         $("#bR1").fadeToggle();
 
-})
+});
 $('.aboutGifs2').click(function(){
         $("#bR2").fadeToggle();
 
-})
+});
 $('.aboutGifs3').click(function(){
         $("#bR3").fadeToggle();
 
-})
-
-
-$('#sendClick').click(function(){
-        $('.chefBread').animate({
-                top: '30%'
-              }, 100);
-              $('.chefBread').animate({
-                top: '35%'
-              }, 100);       
-        z.play();
-        })
-      
-
-
-
-
+});
 
 
 
