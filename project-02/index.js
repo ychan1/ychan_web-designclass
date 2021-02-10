@@ -71,7 +71,7 @@ $("#breadHouse").click(function() {
     if(bun==true) {
         whichBread = "1.gif";
     } else if(meringue==true) {
-        whichBread = "mWalk.gif";
+        whichBread = "mwalk.gif";
     } else if(caramel==true) {
         whichBread = "cWalk.gif";
     }
