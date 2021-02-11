@@ -656,18 +656,7 @@ display:none;
 
 
 
-/* ---- grid ---- */
-/* .frame{
-  position: absolute;
-width: 83%;
-height: 420vh;
-left: 13%;
-top: 20%;
-  border: 5px solid #ffb340;
-  
-  filter: drop-shadow(13px 22px 4px rgba(124, 68, 5, 0.25));
 
-} */
 .main{
   position: absolute;
   width: 80%;
@@ -821,6 +810,9 @@ input[type=submit]:hover {
   }
 }
 @media screen and (max-width: 768px) {
+  *{
+    overflow-x: hidden;
+  }
  /* contact */
   label, .message  {
     width: 100%;
@@ -830,50 +822,84 @@ input[type=submit]:hover {
   top:85%;
   }
   #homeButton{
-   top:5%;
-    left: 25%;
+   top:6%;
+    left: 35%;
    
     
 }
-
+#bread1{
+  top:2%;
+  width: 100px;
+  height: auto;
+}
+#bread2{
+  top:2%;
+  width: 100px;
+  height: auto;
+}
 #aboutButton{ 
-  top:5%;
-    left: 38%;
+  top:6%;
+    left: 48%;
   
     
 }
 #workButton{ 
-  top:5%;
-    left: 53%;
+  top:6%;
+    left: 63%;
    
 }
 #contactButton{ 
-  top:5%;
-    left:65%;
+  top:6%;
+    left:78%;
    
 }
 
 h1{
-  left:93%;
-  top:15%;
-  font-size: 50px;
-  font-size: 30px;
+  left:62%;
+  top:23%;
+  font-size: 25px;
+ 
 }
 .switch{
-  left:90%;
+  width: 120px;
+  height: 60px;
+  left:60%;
+  top:13%;
+}
+.slider:before {
+  
+  height: 48px;
+  width: 48px;
+  
 }
 .chefBread {
-  top:60%;
-  left:5%;
-  transform: scale(0.8);
+  left: -60%;
+  top: 38%;
+ transform: scale(0.2);
+ z-index: 1;
 }
+
 /* home */
-.panelDiv{
-  top:30%;
-  width:100%;
+#breadHouse{
+  width: 400px;
   height: auto;
-  left: 10%;
+  left: 0;
+  top: 40%;
+}
+h4{
+  font-size: 14px;
+}
+.panelDiv{
+  top:9%;
+  width:50%;
+  height: 50%;
+  left:-13%;
   background-image: none;
+}
+.panelButtons{
+  width: 80px;
+  height:25px;
+  margin:3px;
 }
 h3{
   
@@ -881,15 +907,9 @@ h3{
 
 }
 
-.panelTextnButtons{
-
-  flex-direction: row;
-
-  
-}
 .textBox{
-  width: 280px;
-  left: 20%;
+  width: 250px;
+  left: 30%;
   top: 0;
     
 }
@@ -899,7 +919,7 @@ h3{
 }
 
 @keyframes breadWalk {
-  0%{left:30%;}
+  0%{left:10%;}
  100%{
   
   top:120%;
@@ -908,10 +928,11 @@ h3{
 }
 /* ABOUT */
 .aboutText{
-    font-size: 20px;}
+    font-size: 19px;}
 
     .imgDesc{
       font-size: 20px;
+      top:140%;
     }
     .aboutGifs1{
       width:30%;
@@ -927,11 +948,11 @@ h3{
     }
     .crackEgg{
       width:45%;
-      
+      left:0;
     }
     .bunRecipe{
       top:75%;
-      width:250px;
+      width:200px;
       height:400px;
       padding: 20px;
       right:0;
@@ -941,39 +962,46 @@ h3{
     }
     .clickPrompt{
       font-size: 10px;
+      top:145%;
     }
 
 /* works page */
 
 #foun1{
+  left:3%;
   width:40%;
 }
 #foun2{
+  left:3%;
   width:40%;
 }
 #port1{
+  left:33%;
   width:40%;
 }
 #port2{
+  left:33%;
   width:40%;
 }
 #other1{
+  left:60%;
   width:40%;
 }
 #other2{
+  left:60%;
   width:40%;
 }
 
  .founButton{
-   left:17%;
+   left:8%;
   top: 55%;
 }
 .portButton{
-  left:47%;
+  left:43%;
   top: 55%;
 }
 .otherButton{
-  left:77%;
+  left:73%;
   top: 55%;
 }
 h2{font-size: 15px;}
@@ -985,11 +1013,11 @@ h2{font-size: 15px;}
 #worksSideButtonsP {
   transform: rotate(90deg);
   left:-7%;
-  top:70%;
+  top:72%;
 }
 #worksSideButtonsO {
   transform: rotate(90deg);
-  left:-3%;
+  left:-4%;
   top:90%;
 }
 #foun1.smallWorkIconsF {
@@ -1000,16 +1028,51 @@ h2{font-size: 15px;}
 }
 #port1.smallWorkIconsP {
   transform: rotate(90deg);
+  top:60%;
   
 }
 #port2.smallWorkIconsP {
   transform: rotate(90deg);
+  top:60%;
 }
 #other1.smallWorkIconsO {
   transform: rotate(90deg);
-  
+  top:80%;
 }
 #other2.smallWorkIconsO {
   transform: rotate(90deg);
+  top:80%;
 }
+
+.main{
+  
+
+  top:25%;
+
+  
+}
+h5{
+ 
+  font-size: 30px;
+  
+  top:30%;
+  left:5%;
+  
+}
+input[type=text] {
+
+  padding: 10px 20px;
+  margin: 5px 0;
+ 
+}
+form{
+ 
+  left:5%;
+ 
+}
+input[type=submit] {
+  top:90%;
+  left:60%;
+}
+
 }
